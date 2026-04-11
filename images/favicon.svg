@@ -1,0 +1,13 @@
+<svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="favicon-cutouts">
+      <rect width="60" height="60" fill="white"/>
+      <path d="M21 14V28C21 32.97 25.03 37 30 37C34.97 37 39 32.97 39 28V23H33V28C33 29.66 31.66 31 30 31C28.34 31 27 29.66 27 28V14H21Z" fill="black"/>
+      <circle cx="38" cy="17" r="4" fill="black"/>
+    </mask>
+  </defs>
+  <g mask="url(#favicon-cutouts)">
+    <circle cx="30" cy="25" r="24" fill="white"/>
+    <path fill="white" d="M0 30C0 46.57 13.43 60 30 60C46.57 60 60 46.57 60 30H50C50 41.05 41.05 50 30 50C18.95 50 10 41.05 10 30H0Z"/>
+  </g>
+</svg>
