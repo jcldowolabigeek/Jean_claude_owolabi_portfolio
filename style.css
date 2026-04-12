@@ -94,7 +94,7 @@ h2 {
     font-size: clamp(1.5rem, 4vw, 2.5rem); 
     font-weight: 800;
     color: var(--text-secondary);
-    margin-bottom: 5rem;
+    margin-bottom: 2rem; /* Reduced from 5rem */
     font-family: var(--font-heading);
     letter-spacing: -0.01em;
 }
@@ -719,14 +719,12 @@ nav.scrolled {
 
 .testimonial {
     font-size: clamp(1.2rem, 3.5vw, 2.2rem);
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.4;
     color: var(--text-primary);
     margin-bottom: 3rem;
     font-family: var(--font-heading);
 }
-
-.testimonial b { color: #000; font-weight: 900; }
 
 .author img {
     width: 60px;
@@ -815,7 +813,7 @@ nav.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem; /* Reduced from 6rem */
 }
 
 
@@ -832,12 +830,16 @@ nav.scrolled {
 .btn-black-pill {
     background: #000;
     color: #fff;
-    padding: 0.9rem 2.2rem;
-    border-radius: 50px;
+    padding: 1rem 1.2rem; /* Adjusted for icon */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     font-weight: 800;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
+    font-size: 1rem;
     transition: transform 0.3s;
 }
 
