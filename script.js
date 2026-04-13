@@ -46,9 +46,16 @@ window.addEventListener('scroll', () => {
 
 // Interactive Tags for Contact Form
 const tags = document.querySelectorAll('.tag');
+const interestsInput = document.getElementById('interests-input');
+
 tags.forEach(tag => {
     tag.addEventListener('click', () => {
         tag.classList.toggle('active');
+        
+        // Update hidden input with active tags
+        const activeTags = Array.from(document.querySelectorAll('.tag.active'))
+                                .map(t => t.textContent.trim());
+        interestsInput.value = activeTags.join(', ');
     });
 });
 // Drag to Scroll utility
@@ -89,3 +96,17 @@ function setupDragToScroll(selector) {
 // Initialize horizontal scrolls
 setupDragToScroll('.services-grid');
 setupDragToScroll('.testimonials-slider');
+
+// Scroll Services Click
+const scrollServicesBtn = document.getElementById('scrollServices');
+const servicesGrid = document.querySelector('.services-grid');
+
+if (scrollServicesBtn && servicesGrid) {
+    scrollServicesBtn.addEventListener('click', () => {
+        // Défilement fluide vers la droite d'environ une carte (400px)
+        servicesGrid.scrollBy({
+            left: 400,
+            behavior: 'smooth'
+        });
+    });
+}

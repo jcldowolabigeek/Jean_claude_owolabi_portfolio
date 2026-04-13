@@ -162,8 +162,8 @@ h2 {
 
 .hero-layout {
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1.2fr; /* Plus d'espace pour la photo */
+    gap: 4rem;
     align-items: center;
 }
 
@@ -175,17 +175,29 @@ h2 {
 
 .hero-greeting { 
     margin-bottom: 2rem; 
-    font-size: clamp(2rem, 8vw, 5.5rem);
-    letter-spacing: -0.05em;
+    font-size: 1rem; /* Base reset pour utiliser des tailles spécifiques sur les spans */
+    letter-spacing: -0.04em;
     display: flex;
-    flex-direction: column; /* Match screenshot stack */
+    flex-direction: column;
     align-items: flex-start;
-    line-height: 0.9;
+    line-height: 1.1; 
     z-index: 10;
 }
 
+.hero-greeting .light-weight { 
+    font-size: clamp(1.8rem, 4vw, 2.5rem); 
+    font-weight: 300;
+}
+
+.hero-greeting .bold,
+.hero-greeting .bold-weight { 
+    font-size: clamp(2.8rem, 7vw, 4.8rem); 
+    font-weight: 900;
+    line-height: 1;
+}
+
 .light-weight { font-weight: 300; }
-.bold-weight { font-weight: 900; }
+.bold-weight, .bold { font-weight: 900; }
 
 .hero-role-line {
     display: flex;
@@ -439,22 +451,22 @@ nav.scrolled {
 .hero-visual {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: flex-end; 
+    justify-content: flex-end;
+    align-items: center; /* Centré avec le texte verticalement */
     height: 100%;
-    margin-bottom: -120px; /* Sink photo into ticker area */
-    z-index: 10; /* Below buttons but above background */
+    margin-bottom: -100px; /* Moins de décalage vers le bas pour garder de la hauteur */
+    z-index: 10;
 }
 
 
 .visual-main-img {
     width: 100%;
-    max-width: 650px; /* Slightly larger for impact */
+    max-width: 850px; /* Encore un peu plus grand pour égaler la hauteur du texte */
     height: auto;
     display: block;
     object-fit: contain;
     position: relative;
-    bottom: -10px; /* Sink slightly into ticker */
+    bottom: -30px; /* Plus de décalage pour l'effet d'image débordante */
 }
 
 
@@ -830,17 +842,19 @@ nav.scrolled {
 .btn-black-pill {
     background: #000;
     color: #fff;
-    padding: 1rem 1.2rem; /* Adjusted for icon */
+    padding: 1rem 1.2rem;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 60px; /* Un peu plus grand pour l'esthétique */
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     font-weight: 800;
     font-size: 1rem;
-    transition: transform 0.3s;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-black-pill:hover { transform: scale(1.05); }
@@ -1185,7 +1199,7 @@ nav.scrolled {
     text-transform: uppercase;
 }
 
-.form-group input {
+.form-group input, .form-group textarea {
     border: none;
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 0;
@@ -1193,9 +1207,15 @@ nav.scrolled {
     font-size: 1rem;
     outline: none;
     transition: border-color 0.3s;
+    background: transparent;
 }
 
-.form-group input:focus {
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group input:focus, .form-group textarea:focus {
     border-bottom-color: #000;
 }
 
